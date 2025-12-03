@@ -33,15 +33,12 @@ fn is_invalid_id_part_two(id: &str) -> bool {
             continue
         }
 
-        let mut splitted_strings: Vec<String> = vec![];
+        let splitted_string = id.split_at(id.len()/n).0;
+        let invalid_string = splitted_string.repeat(n);
+        
+        let is_invalid = invalid_string == id;
+        
 
-        let mut id_chars: Vec<_> = id.chars().collect();
-        for _ in 0..n {
-            let splitted_string = id_chars.drain(..id.len()/n);
-            splitted_strings.push(splitted_string.collect())
-        }
-
-        let is_invalid = splitted_strings.iter().all(|s| *s == splitted_strings[0]);
         if is_invalid {
             return true
         }
