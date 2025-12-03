@@ -72,8 +72,8 @@ fn run(ranges: &str, is_part_two: bool) -> u64 {
 
 fn main(){
     let first_result = run(include_str!("puzzle.txt"), false);
-    let second_result = run(include_str!("puzzle.txt"), true);
-
     println!("first: {first_result}");
+
+    let second_result = run(include_str!("puzzle.txt"), true);
     println!("second: {second_result}");
 }
